@@ -47,7 +47,7 @@ function BuiltByAi() {
             >
                 The right tool, the right process, and the right people.
                 No agency, no dev team, a fraction of the usual timeline. 
-                What will you do?
+                What could your team be doing?
             </span>
         </span>
     );
