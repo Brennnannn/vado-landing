@@ -31,7 +31,7 @@ const founders: Founder[] = [
 
 /**
  * @description Team stands in for the case-study section VADO doesn't have yet - founder
- * headshots and short first-person bios. Content is placeholder until real specifics land;
+ * headshots and short first-person bios. Content is placeholder until real specifics land
  * placeholder cards are visibly marked so they can't ship by accident unnoticed.
  */
 export function Team() {
