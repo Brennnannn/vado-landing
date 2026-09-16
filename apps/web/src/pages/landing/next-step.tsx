@@ -1,38 +1,46 @@
 import { useState } from "react";
-import { CheckCircle2, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
+import { twMerge } from "tailwind-merge";
 import { Button, Card } from "@vado/ui";
 import { ContentBox } from "../../components/ui/layout/box";
 import { FadeInUp } from "../../components/ui/text/fade-in-up";
 import { PowerButton } from "../../components/ui/misc/power-button";
 import { submitDiagnosticRequest, type DiagnosticRequest } from "@/util/submit-diagnostic";
+import { BookingScheduler } from "./booking-scheduler";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "error";
 
 /**
  * @description NextStep is the final, low-friction close - repeats the hero CTA verbatim and
  * keeps the form to four fields (name, email, company, one line on the process). Sits on a
  * secondary-colored panel so it reads as the destination the page has been pointing at.
+ * Two steps: the form saves the lead, then the Cal.com scheduler takes over the full panel
+ * width with everything pre-filled, so the visitor only has to pick a time.
  */
 export function NextStep() {
+    const [lead, setLead] = useState<DiagnosticRequest | null>(null);
+
     return (
         <ContentBox>
             <FadeInUp>
                 <Card className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-secondary text-ink shadow-xl sm:shadow-2xl p-4 pt-7 sm:p-12 lg:p-16">
                     <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/60 blur-3xl" aria-hidden />
-                    <div className="relative grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-7 sm:gap-10 lg:gap-16 items-start">
+                    <div className={twMerge("relative grid grid-cols-1 gap-7 sm:gap-10 items-start", !lead && "lg:grid-cols-[1fr_1.1fr] lg:gap-16")}>
                         <div className="flex flex-col gap-3 sm:gap-5 px-1 sm:px-0">
                             <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-deep">
                                 <span className="h-1.5 w-6 rounded-full bg-primary-deep" />
                                 Next step
                             </div>
                             <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight leading-[1.05] text-balance">
-                                Let's look at one process worth fixing.
+                                {lead ? "Now pick a time that works." : "Let's look at one process worth fixing."}
                             </h2>
                             <p className="text-base sm:text-lg text-ink/70 leading-relaxed text-pretty">
-                                A diagnostic conversation costs you nothing and tells us both if this is a fit.
+                                {lead
+                                    ? "We've got your details. Choose a slot for the diagnostic conversation and a calendar invite will follow."
+                                    : "A diagnostic conversation costs you nothing and tells us both if this is a fit."}
                             </p>
                         </div>
-                        <DiagnosticForm />
+                        {lead ? <BookingScheduler lead={lead} /> : <DiagnosticForm onSubmitted={setLead} />}
                     </div>
                 </Card>
             </FadeInUp>
@@ -42,7 +50,7 @@ export function NextStep() {
 
 const emptyForm: DiagnosticRequest = { name: "", email: "", company: "", process: "" };
 
-function DiagnosticForm() {
+function DiagnosticForm({ onSubmitted }: { onSubmitted: (lead: DiagnosticRequest) => void }) {
     const [form, setForm] = useState<DiagnosticRequest>(emptyForm);
     const [status, setStatus] = useState<Status>("idle");
 
@@ -56,23 +64,12 @@ function DiagnosticForm() {
             // Honeypot: real visitors never see or fill "website"; bots that do get a silent success
             const honeypot = new FormData(e.currentTarget).get("website");
             if (!honeypot) await submitDiagnosticRequest(form);
-            setStatus("sent");
-            setForm(emptyForm);
+            onSubmitted(form);
         } catch (error) {
             console.error("Error submitting diagnostic request: ", error);
             setStatus("error");
         }
     };
-
-    if (status === "sent") {
-        return (
-            <div className="flex flex-col items-start gap-4 rounded-xl sm:rounded-2xl bg-background/60 p-6 sm:p-8 text-text" role="status">
-                <CheckCircle2 className="h-10 w-10 text-primary-ink" />
-                <h3 className="text-2xl font-semibold">Thanks - we'll be in touch.</h3>
-                <p className="text-text-muted">We'll reach out to find a time for the diagnostic conversation.</p>
-            </div>
-        );
-    }
 
     return (
         <form onSubmit={handleSubmit} className="relative flex flex-col gap-3.5 sm:gap-4 rounded-xl sm:rounded-2xl bg-background p-4 sm:p-8 text-text shadow-lg">

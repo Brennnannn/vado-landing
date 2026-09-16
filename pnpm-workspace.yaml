@@ -4,6 +4,7 @@ packages:
 
 catalog:
   react: ^19.1.0
+  "@calcom/embed-react": ^1.5.3
   "@supabase/supabase-js": ^2.57.0
   react-dom: ^19.1.0
   react-router-dom: ^7.6.0
