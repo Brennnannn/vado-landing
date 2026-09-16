@@ -1,0 +1,5 @@
+project_id = "vado"
+
+# Cal.com authenticates with an HMAC signature, not a Supabase JWT
+[functions.cal-webhook]
+verify_jwt = false

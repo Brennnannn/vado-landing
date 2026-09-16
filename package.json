@@ -1,0 +1,11 @@
+{
+  "name": "vado",
+  "private": true,
+  "packageManager": "pnpm@10.31.0",
+  "scripts": {
+    "dev": "pnpm --filter @vado/web dev",
+    "build": "pnpm --filter @vado/web build",
+    "lint": "pnpm --filter @vado/web lint",
+    "check-types": "pnpm -r check-types"
+  }
+}
