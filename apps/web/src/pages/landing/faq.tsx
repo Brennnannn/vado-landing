@@ -16,7 +16,7 @@ const questions: AccordionEntry[] = [
     {
         title: "How long does an engagement take?",
         // TODO(content): rough timeline for diagnostic → training → check-in cycle
-        content: "[Placeholder - typical timeline from diagnostic through training and the post-go-live check-ins.]",
+        content: "Diagnostic to training can be as quick as 3 weeks, and the check-in cycle is typically 1-2 months after go-live.",
     },
     {
         title: "What if our team resists the change?",

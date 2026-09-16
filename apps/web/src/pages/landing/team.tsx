@@ -38,7 +38,7 @@ export function Team() {
     return (
         <ContentBox>
             <SectionHeading eyebrow="Why this team" title="Built by people who've run the floor, not just consulted on it.">
-                [Placeholder - this section needs the founding team's operational background before launch.]
+                Industry background. Future focused.
             </SectionHeading>
 
             <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
