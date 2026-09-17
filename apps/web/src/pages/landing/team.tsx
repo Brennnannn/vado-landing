@@ -24,20 +24,20 @@ const founders: Founder[] = [
     {
         initials: "OM",
         name: "Oak Martin",
-        role: "CFO & Co-founder",
+        role: "COO & Co-founder",
         bio: "Instructor at John Brown University for social entreprenuership. Epic Impact Trips tourism product manager. ",
     },
 ];
 
 /**
- * @description Team stands in for the case-study section VADO doesn't have yet - founder
+ * @description Team stands in for the case-study section Vado doesn't have yet - founder
  * headshots and short first-person bios. Content is placeholder until real specifics land
  * placeholder cards are visibly marked so they can't ship by accident unnoticed.
  */
 export function Team() {
     return (
         <ContentBox>
-            <SectionHeading eyebrow="Why this team" title="Built by people who've run the floor, not just consulted on it.">
+            <SectionHeading eyebrow="The team" title="Built by people who've run the floor, not just consulted on it.">
                 Industry background. Future focused.
             </SectionHeading>
 

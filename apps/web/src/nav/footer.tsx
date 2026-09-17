@@ -9,7 +9,7 @@ export function Footer() {
             <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center w-full max-w-7xl mx-auto px-4 sm:px-8 py-8">
                 <Logo className="text-2xl text-text" iconClassName="text-primary" />
                 <div className="flex flex-col sm:items-end gap-1 text-xs sm:text-sm text-text-muted">
-                    <span>© {new Date().getFullYear()} VADO. All rights reserved.</span>
+                    <span>© {new Date().getFullYear()} Vado. All rights reserved.</span>
                     <BuiltByAi />
                 </div>
             </div>

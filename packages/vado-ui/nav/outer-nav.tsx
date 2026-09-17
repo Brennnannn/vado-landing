@@ -40,7 +40,7 @@ export function OuterNav({ navItems, action, children, className, logoHref = "#t
         <header className={twMerge("sticky top-0 w-full h-16 md:h-20 z-20 bg-background", className)}>
             <div className="relative flex items-center h-full w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 gap-4">
                 {/* z-50 keeps the logo crisp above the drawer's backdrop */}
-                <a href={logoHref} className="relative z-50 shrink-0 flex items-center" aria-label="VADO home" onClick={close}>
+                <a href={logoHref} className="relative z-50 shrink-0 flex items-center" aria-label="Vado home" onClick={close}>
                     <Logo className="text-2xl md:text-3xl text-text" iconClassName="text-primary" />
                 </a>
 

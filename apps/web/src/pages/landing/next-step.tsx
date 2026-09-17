@@ -98,7 +98,7 @@ function DiagnosticForm({ onSubmitted }: { onSubmitted: (lead: DiagnosticRequest
                 <PowerButton
                     className="w-full"
                     Button={
-                        <Button scheme="primary" type="submit" disabled={status === "sending"} className="w-full py-4 text-base sm:text-lg whitespace-nowrap shadow-xl">
+                        <Button scheme="primary" type="submit" disabled={status === "sending"} className="w-full py-4 text-base sm:text-lg whitespace-nowrap shadow-xl text-red-100">
                             {status === "sending" && <Loader2 className="h-5 w-5 animate-spin" />}
                             Book a Process Diagnostic
                         </Button>

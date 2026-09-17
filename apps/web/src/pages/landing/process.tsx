@@ -22,7 +22,7 @@ const phases: PhaseData[] = [
         body: (
             <>
                 We will sit down with the person who actually runs the process to understand how the work
-                really happens: the team's skill level, the tools they're allowed to use, and what will and won't survive
+                really happens: the team's skill level, the tools they're equipped with, and what will and won't survive
                 contact with how your culture operates.
             </>
         ),
@@ -65,7 +65,7 @@ const phases: PhaseData[] = [
 export function Process() {
     return (
         <ContentBox>
-            <SectionHeading eyebrow="How VADO works" title="We don't train on a tool. We integrate one.">
+            <SectionHeading eyebrow="The Solution" title="We don't train on a tool. We integrate one.">
                 Three phases, each built around the people who will actually see the change.
             </SectionHeading>
 

@@ -32,7 +32,7 @@ export function Header() {
                 navItems={[sectionItems]}
                 action={
                     <a href="#book" className="block w-full">
-                        <Button scheme="primary" className="w-full">
+                        <Button scheme="primary" className="w-full text-red-100">
                             Book a Diagnostic
                         </Button>
                     </a>
@@ -55,7 +55,7 @@ export function Header() {
                 aria-hidden={!showMobileCta}
             >
                 <a href="#book" tabIndex={showMobileCta ? 0 : -1} className="block">
-                    <Button scheme="primary" tabIndex={-1} className="w-full py-3.5 text-base shadow-lg">
+                    <Button scheme="primary" tabIndex={-1} className="text-red-100 w-full py-3.5 text-base shadow-lg">
                         Book a Process Diagnostic
                     </Button>
                 </a>

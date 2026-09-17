@@ -60,7 +60,7 @@ function Grab() {
                     <PowerButton
                         className="w-full sm:w-auto"
                         Button={
-                            <Button scheme="primary" className="w-full sm:w-auto px-7 py-4 text-base sm:text-lg shadow-xl">
+                            <Button scheme="primary" className="w-full sm:w-auto px-7 py-4 text-base sm:text-lg shadow-xl text-red-100">
                                 Book a Process Diagnostic
                             </Button>
                         }

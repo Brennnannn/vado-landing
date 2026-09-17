@@ -60,7 +60,7 @@ export function BookingScheduler({ lead }: BookingSchedulerProps) {
 
     return (
         <div className="flex flex-col gap-3">
-            <div className="overflow-hidden rounded-xl sm:rounded-2xl bg-background shadow-lg">
+            <div className="overflow-hidden rounded-xl sm:rounded-2xl pt-6 bg-background shadow-lg">
                 <Cal
                     namespace={NAMESPACE}
                     calLink={CAL_LINK}

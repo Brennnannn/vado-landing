@@ -10,7 +10,7 @@ import { Faq } from "./faq";
 import { NextStep } from "./next-step";
 
 /**
- * @description Landing is the VADO marketing homepage - a single conversion funnel.
+ * @description Landing is the Vado marketing homepage - a single conversion funnel.
  * Hero (with the animated workflow board) → Problem → Process → Pricing → Team → FAQ → Book.
  * Process sits on the surface band and Pricing on a secondary-tinted band so the two
  * differentiators get visual weight.
@@ -30,17 +30,17 @@ export function Landing() {
                 <Problem />
                 <Spacer />
             </section>
-            <section id="process" aria-label="How VADO works" className="bg-surface">
+            <section id="process" aria-label="solution" className="bg-surface">
                 <Transition className="h-16 sm:h-24 w-full" atTop={false} />
                 <Process />
                 <Spacer className="h-20 sm:h-32" />
             </section>
-            <section id="pricing" aria-label="Pricing model" className="bg-secondary/25 dark:bg-secondary/[0.04] border-y border-trim">
+            <section id="pricing" aria-label="Pricing" className="bg-secondary/25 dark:bg-secondary/[0.04] border-y border-trim">
                 <Spacer />
                 <Pricing />
                 <Spacer />
             </section>
-            <section id="team" aria-label="Why this team">
+            <section id="team" aria-label="team">
                 <Spacer />
                 <Team />
                 <Spacer />

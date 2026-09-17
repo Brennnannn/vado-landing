@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-/** The three stacked swoosh paths that make up the VADO mark, in the `77 111 800 817` viewBox. */
+/** The three stacked swoosh paths that make up the Vado mark, in the `77 111 800 817` viewBox. */
 export const LOGO_PATHS = [
   "M673.80 483.58 C665.32 463.20 630.83 437.20 612.07 425.13 C512.40 360.97 376.67 370.66 266.07 329.59 C198.39 304.45 142.73 251.41 109.57 187.90 C97.16 164.15 92.08 137.46 81.84 115.80 C88.67 125.49 105.19 135.65 115.45 142.96 C165.12 178.36 226.80 195.34 285.98 206.29 C354.71 219.00 424.44 225.57 490.23 250.75 C564.84 279.30 622.94 332.93 655.17 405.89 C659.22 415.06 677.20 474.39 673.80 483.58 Z",
   "M238.06 382.50 C248.16 395.67 265.82 403.81 279.96 411.91 C334.85 443.33 398.37 453.47 460.00 462.80 C562.00 478.25 671.25 498.47 733.43 590.04 C749.52 613.72 761.00 639.68 767.52 667.56 C770.25 679.16 770.12 691.41 772.85 702.83 C760.75 680.74 736.34 664.64 715.35 651.77 C630.42 599.73 526.67 603.95 432.87 580.74 C358.62 562.38 299.65 515.91 263.44 448.44 C252.32 427.72 246.05 404.00 238.06 382.50 Z",
@@ -10,7 +10,7 @@ export const LOGO_PATHS = [
 export const LOGO_VIEWBOX = { x: 77, y: 111, width: 800, height: 817 } as const;
 
 /**
- * Renders the VADO swoosh mark as an inline SVG. Color is driven by `currentColor`,
+ * Renders the Vado swoosh mark as an inline SVG. Color is driven by `currentColor`,
  * so set it via Tailwind `text-*` classes.
  *
  * @param {string} [className] - Tailwind classes for color and sizing (e.g. `"h-10 w-auto text-primary"`)
@@ -43,7 +43,7 @@ type LogoProps = {
 };
 
 /**
- * The full VADO lockup - swoosh mark plus DM Sans wordmark. Sized by font-size, so
+ * The full Vado lockup - swoosh mark plus DM Sans wordmark. Sized by font-size, so
  * scale it with `text-*` size utilities (the mark tracks `1em`).
  *
  * @param {string} [className] - Classes on the wrapper (font size, text color)
